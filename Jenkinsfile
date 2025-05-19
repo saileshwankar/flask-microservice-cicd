@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                bat 'pip install -r requirements.txt'
+                // Use python -m pip instead of pip directly
+                bat 'python -m pip install -r requirements.txt'
             }
         }
         stage('Unit Tests') {
