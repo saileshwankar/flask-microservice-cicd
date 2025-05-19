@@ -1,9 +1,10 @@
+
 pipeline {
     agent any
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/flask-microservice.git'
+                git 'https://github.com/saileshwankar/flask-microservice-cicd.git'
             }
         }
         stage('Install Dependencies') {
