@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     stages {
@@ -9,17 +8,17 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
         stage('Unit Tests') {
             steps {
-                sh 'pytest tests/'
+                bat 'pytest tests/'
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t flask-microservice:latest .'
+                bat 'docker build -t flask-microservice:latest .'
             }
         }
     }
